@@ -15,5 +15,5 @@ MRuby::Gem::Specification.new('mruby-serverspec') do |spec|
   spec.add_dependency 'mruby-specinfra',  github: 'k0kubun/mruby-specinfra'
 
   # Related to Serverspec
-  spec.add_dependency 'mruby-eval'
+  spec.add_dependency 'mruby-eval',  core: 'mruby-eval'
 end
