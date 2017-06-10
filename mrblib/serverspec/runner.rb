@@ -1,6 +1,11 @@
 module Serverspec
   class Runner
 
+    def self.run_command(cmd)
+      exec = Specinfra::Backend::Exec.new(shell: '/bin/sh')
+      exec.run_command(cmd)
+    end
+
     def self.method_missing(meth, *args)
       run(meth, *args)
     end
