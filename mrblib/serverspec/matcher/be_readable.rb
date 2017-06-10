@@ -1,22 +1,13 @@
-module Serverspec
-  module Matchers
-    class BeReadableMatcher < RSpec::Matchers::BaseMatcher
+RSpec::Matchers.define :be_readable do
+  match do |file|
+    file.readable?(@by_whom, @by_user)
+  end
 
-      def match(file)
-        file.readable?(@by_whom, @by_user)
-      end
+  chain :by do |by_whom|
+    @by_whom = by_whom
+  end
 
-      def by(by_whom)
-        @by_whom = by_whom
-        self
-      end
-
-      def by_user(by_user)
-        @by_user = by_user
-        self
-      end
-
-      RSpec::Matchers.define :be_readable, BeReadableMatcher
-    end
+  chain :by_user do |by_user|
+    @by_user = by_user
   end
 end
