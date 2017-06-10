@@ -1,2 +1,9 @@
 # mruby-serverspec
-WIP!WIP!WIP! Serverspec gem for mruby.
+
+Serverspec gem for mruby.
+
+# License
+
+MITL.
+
+Its based on [serverspec](https://github.com/mizzy/serverspec).
