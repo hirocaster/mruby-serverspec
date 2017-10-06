@@ -1,6 +1,6 @@
 RSpec::Matchers.define :be_running do
   match do |subject|
-    if subject.class.name == 'Serverspec::Type::Service'
+    if subject.class == Serverspec::Type::Service
       subject.running?(@under)
     else
       subject.running?

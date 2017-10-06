@@ -1,9 +1,9 @@
 RSpec::Matchers.define :have_site_bindings do |port|
   match do |subject|
-    if subject.class.name == 'Serverspec::Type::IisWebsite'
+    if subject.class == Serverspec::Type::IisWebsite
       subject.has_site_bindings?(port, @protocol, @ipaddress, @host_header)
     else
-      className = subject.class.name
+      className = subject.class
       raise "not supported class #{className}"
     end
   end
